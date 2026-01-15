@@ -9,8 +9,9 @@ REFRESH_TOKEN_EXPIRE_MINUTES="7_days_for_example"
 ACCESS_TOKEN_SECRET_KEY="your_secret_key"
 REFRESH_TOKEN_SECRET_KEY="your_secret_key"
 TOKEN_ALGORITHM="HS256_for_example"
-REDIS_URL="your_redis_url
+REDIS_URL="your_redis_url"
 ```
-sqlite_url is optional and is used for testing purposes
+sqlite_url is optional and used for testing purposes
 
 redis_url is required for fastapi_limiter to work
+
