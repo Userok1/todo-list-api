@@ -24,19 +24,23 @@ class Config:
 
     @property
     def SQLITE_URL(self):
-        return self.sqlite_url
+        if self.sqlite_url:
+            return self.sqlite_url
 
     @property
     def POSTGRESQL_URL(self):
-        return self.postgresql_url
+        if self.postgresql_url:
+            return self.postgresql_url
     
     @property
     def ACCESS_TOKEN_SECRET_KEY(self):
-        return self.access_token_secret_key
+        if self.access_token_secret_key:
+            return self.access_token_secret_key
 
     @property
     def REFRESH_TOKEN_SECRET_KEY(self):
-        return self.refresh_token_secret_key
+        if self.refresh_token_secret_key:
+            return self.refresh_token_secret_key
     
     @property
     def ACCESS_TOKEN_EXPIRE_MINUTES(self):
@@ -54,7 +58,8 @@ class Config:
 
     @property
     def TOKEN_ALGORITHM(self):
-        return self.token_algorithm
+        if self.token_algorithm:
+            return self.token_algorithm
 
 
 cfg = Config()

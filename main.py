@@ -7,12 +7,13 @@ from contextlib import asynccontextmanager
 from src.auth import router as auth_router
 from src.routes import router as todo_router
 from src.database import engine, Base
+from config import cfg
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Rate limitting
-    redis_connection = redis.from_url("redis://localhost", encoding="utf-8", decode_responses=True) 
+    redis_connection = redis.from_url(cfg.REDIS_URL, encoding="utf-8", decode_responses=True) 
     await FastAPILimiter.init(redis_connection)
     # Database
     async with engine.begin() as conn:
